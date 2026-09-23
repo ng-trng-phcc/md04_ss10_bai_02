@@ -73,7 +73,7 @@ public class BillController {
     /**
      * Thanh toán - Khi nhấn nút "Thanh toán": tính tiền + gửi OrderEvent vào Kafka.
      * Mỗi BillItem sẽ tạo 1 OrderEvent với key = medicineId (lấy từ item.name).
-     * Topic: medicine-stock-events, đảm bảo cùng medicineId → cùng partition.
+     * Topic: medicine-stock-events, đảm bảo cùng medicineId -> cùng partition.
      * Sau khi gửi Kafka thành công, phản hồi "Thanh toán thành công".
      */
     @PostMapping("/checkout")
