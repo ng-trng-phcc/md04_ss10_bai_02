@@ -3,6 +3,17 @@ spring:
     name: pharmacy-service
   config:
     import: optional:configserver:http://localhost:8888
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      retries: 3
+      acks: all
+      properties:
+        enable.idempotence: true
+        spring.json.trusted.packages: com.example.pharmacyservice.event
+        spring.json.add.type.headers: false
   # fallback datasource nếu Config Server chưa sẵn sàng (giá trị chính từ pharmacy-service.yml trên GitHub)
   datasource:
     url: jdbc:postgresql://localhost:5432/pharmacy_db
