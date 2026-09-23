@@ -138,7 +138,7 @@ public class BillController {
                 .build();
 
         return ResponseEntity.ok(Map.of(
-                "message", "Thanh toán thành công",
+                "message", "Thanh toán thành công! Sự kiện đang được gửi tới Kafka",
                 "status", "SUCCESS",
                 "orderId", orderId,
                 "bill", bill,

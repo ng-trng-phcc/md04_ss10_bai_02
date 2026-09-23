@@ -53,7 +53,7 @@ public class OrderController {
                     result.getRecordMetadata().partition(), result.getRecordMetadata().offset());
 
             return ResponseEntity.ok(Map.of(
-                    "message", "Thanh toán thành công",
+                    "message", "Thanh toán thành công! Sự kiện đang được gửi tới Kafka",
                     "status", "SUCCESS",
                     "orderId", event.getOrderId(),
                     "medicineId", event.getMedicineId(),
